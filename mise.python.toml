@@ -1,0 +1,18 @@
+[tools]
+python = "3.13"
+
+[tasks."fmt:python"]
+description = "Format Python code with ruff"
+run = "uv run --frozen ruff format"
+
+[tasks."lint:python"]
+description = "Lint Python with ruff, ty, and pip-audit"
+run = ["uv run --frozen ruff check", "uv run --frozen ty check", "uv run --frozen pip-audit"]
+
+[tasks."test:python"]
+description = "Run Python tests with pytest"
+run = "uv run --frozen pytest"
+
+[tasks."ci:python"]
+description = "Run Python lint and test tasks"
+depends = ["lint:python", "test:python"]
