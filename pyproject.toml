@@ -13,7 +13,7 @@ dev = ["pytest>=8", "ruff>=0.11", "ty>=0.0.1a0", "pip-audit>=2"]
 exclude-newer = "P3D"
 
 [build-system]
-requires = ["uv_build>=0.11,<0.12"]
+requires = ["uv_build>=0.11,<0.14"]
 build-backend = "uv_build"
 
 [tool.ty.environment]
